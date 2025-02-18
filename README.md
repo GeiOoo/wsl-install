@@ -1,10 +1,10 @@
 # Setup
 - Clone or download as zip
-- make sure ``install-docker.sh`` is in the same directory as ``install-wsl-ubuntu.ps1``
-- Run ``install-wsl-ubuntu.ps1`` in a Admin-Powershell.
+- Make sure `install-docker.sh` is in the same directory as `install-wsl-ubuntu.ps1`
+- Run `install-wsl-ubuntu.ps1` in an Admin PowerShell
 
-Existing WSL-Distro with the name of ``Ubuntu-24.04`` will ne unregistered and all data will be removed!
+Existing WSL distro with the name `Ubuntu-24.04` will be unregistered and all data will be removed!
 
 ## After install
 
-VS-Code will open from inside the WSL-Distro in a new directory ``~/dev/``
+VS Code will open from inside the WSL distro in a new directory `~/dev/`
