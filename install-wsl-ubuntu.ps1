@@ -32,14 +32,3 @@ Ubuntu2404 run apt install -y docker.io
 # open folder insider wsl in vs code
 Ubuntu2404 run mkdir ~/dev
 Ubuntu2404 run code ~/dev/
-
-# Create setup script for Ubuntu
-# $setupScript = @'
-# #!/bin/bash
-# # Update package list and upgrade existing packages
-# sudo apt-get update && sudo apt-get upgrade -y
-
-# # Install Git
-# sudo apt-get install -y git
-
-# # Install Docker prerequisites
