@@ -27,7 +27,7 @@ Ubuntu2404 run apt upgrade -y
 Ubuntu2404 run apt install -y git
 
 # install docker
-Ubuntu2404 run apt install -y docker.io
+Ubuntu2404 run ./install-docker.sh
 
 # open folder insider wsl in vs code
 Ubuntu2404 run mkdir ~/dev
