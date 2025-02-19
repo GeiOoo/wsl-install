@@ -15,10 +15,22 @@ if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
 
 wsl --unregister Ubuntu-24.04
 
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-2404 -OutFile ~/Ubuntu.appx -UseBasicParsing
-Add-AppxPackage -Path ~/Ubuntu.appx
+$distroPath = "~/Ubuntu-24_04.appx";
+$distroDownloadUrl = "https://wslstorestorage.blob.core.windows.net/wslblob/Ubuntu2404-240425.AppxBundle";
+
+# check if file exists
+if (Test-Path $distroPath) {
+    Write-Host "Distro file already exists. Skipping download.";
+}
+else {
+    Write-Host "Downloading distro file...";
+    Invoke-WebRequest -Uri $distroDownloadUrl -OutFile $distroPath -UseBasicParsing;
+}
+
+Add-AppxPackage -Path $distroPath
 
 RefreshEnv
+
 Ubuntu2404 install --root
 Ubuntu2404 run apt update
 Ubuntu2404 run apt upgrade -y
@@ -27,7 +39,7 @@ Ubuntu2404 run apt upgrade -y
 Ubuntu2404 run apt install -y git
 
 # install docker
-Ubuntu2404 run ./install-docker.sh
+Ubuntu2404 run "curl -fsSL https://get.docker.com | sudo sh"
 
 # open folder insider wsl in vs code
 Ubuntu2404 run mkdir ~/dev
