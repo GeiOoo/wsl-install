@@ -1,6 +1,6 @@
 # Setup
 
-- Run `install-wsl-ubuntu.ps1` in an Admin PowerShell
+- Run `install.ps1` in an Admin PowerShell
 
 Existing WSL distro with the name `Ubuntu-24.04` will be unregistered and all
 data will be removed!
