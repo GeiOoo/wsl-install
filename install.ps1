@@ -1,8 +1,5 @@
 # Check if running as administrator
-if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-    Write-Warning "Please run this script as Administrator!"
-    Exit
-}
+#Requires -Version 7.4 -RunAsAdministrator
 
 # Enable WSL feature if not already enabled
 if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux).State -ne 'Enabled') {
@@ -12,6 +9,8 @@ if ((Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
     Write-Host "WSL features enabled. Please restart your computer and run this script again."
     Exit
 }
+
+code --install-extension ms-vscode-remote.remote-wsl
 
 wsl --unregister Ubuntu-24.04
 
