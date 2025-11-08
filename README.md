@@ -13,4 +13,4 @@ VS Code will open from inside the WSL distro in a new directory `~/dev/`
 
 Execute following line in admin PowerShell7
 
-```Invoke-RestMethod -Uri "https://github.com/GeiOoo/wsl-install/blob/master/install.ps1" | Invoke-Expression```
+```Invoke-RestMethod -Uri "https://raw.githubusercontent.com/GeiOoo/wsl-install/master/install.ps1" | Invoke-Expression```
