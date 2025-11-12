@@ -31,6 +31,7 @@ Add-AppxPackage -Path $distroPath
 RefreshEnv
 
 Ubuntu2404 install --root
+wsl --manage Ubuntu-24.04 --move .
 Ubuntu2404 run apt update
 Ubuntu2404 run apt upgrade -y
 
